@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+			rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="favicon1.svg">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Product Page</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__top top-header">
+					<div class="top-header__container">
+						<address class="top-header__location">
+							<a href="#" class="top-header__link-location --icon-author">
+								Store Location: Lincoln- 344, Illinois, Chicago, USA
+							</a>
+						</address>
+
+						<div class="top-header__actions actions-top-header">
+							<div class="actions-top-header__lang-currency lang-currency">
+								<select
+									name="form[lang]"
+									id
+									class="
+										lang-currency__select
+										lang-currency__select--icon-shevron
+									">
+									<option value="eng" class="lang-currency__item">Eng</option>
+									<option value="ua" class="lang-currency__item">Ua</option>
+									<option value="smt" class="lang-currency__item">Smt</option>
+								</select>
+
+								<select name="form[currency]" id
+									class="lang-currency__select --icon-shevron">
+									<option value="usd" class="lang-currency__item">USD</option>
+									<option value="uah" class="lang-currency__item">UAH</option>
+									<option value="eur" class="lang-currency__item">EUR</option>
+								</select>
+							</div>
+
+							<div class="actions-top-header__auth auth-top-header">
+								<a href="#" target="_blank" class="auth-top-header__link">Sign In /</a>
+								<a href="#" target="_blank" class="auth-top-header__link">Sign Up</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__middle middle-header">
+					<div class="middle-header__container">
+						<a href="#" class="middle-header__logo logo-header">
+							<img
+								src="img/svg/zelena_gilochka.svg"
+								alt="logotyp zelena gilochka"
+								class="logo-header__icon">
+
+							<span class="logo-header__text">Ecobazar</span>
+						</a>
+
+						<div class="middle-header__place-search">
+							<form
+								action="#"
+								class="middle-header__search search-header search-header--icon-link">
+								<input type="text" class="search-header__input" placeholder="Search">
+								<button
+									class="search-header__button button button--middle">Search</button>
+							</form>
+						</div>
+
+						<div class="middle-header__actions actions-header">
+							<a href="#" class="actions-header__favorite">
+								<div class="actions-header__icon-heart"></div>
+							</a>
+
+							<a href="#" class="actions-header__card card-header">
+								<div class="card-header__icon-bag">
+									<span>9</span>
+								</div>
+
+								<div class="card-header__body">
+									<div class="card-header__label">Shopping cart:</div>
+									<div class="card-header__value">$57.00</div>
+								</div>
+							</a>
+						</div>
+
+						<button class="icon-menu" type="button"><span></span></button>
+					</div>
+				</div>
+
+				<div class="header__bottom bottom-header">
+					<div class="bottom-header__container">
+						<div class="bottom-header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="#" class="menu__link">Home</a>
+										<button class="menu__button --icon-chevron"></button>
+
+										<ul class="sub-menu">
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="menu__item">
+										<a href="#" class="menu__link">Shop</a>
+									</li>
+
+									<li class="menu__item">
+										<a href="#" class="menu__link">Pages</a>
+
+										<button class="menu__button --icon-chevron"></button>
+
+										<ul class="sub-menu">
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+
+											<li class="sub-menu__item">
+												<a href="#" class="sub-menu__link">this is link</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="menu__item">
+										<a href="#" class="menu__link">Blog</a>
+									</li>
+
+									<li class="menu__item">
+										<a href="#" class="menu__link">About Us</a>
+									</li>
+
+									<li class="menu__item">
+										<a href="#" class="menu__link">Contacts Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+						<a href="tel:2195550114" class="bottom-header__phone --icon-author">
+							<span>(219) 555-0114</span>
+						</a>
+					</div>
+				</div>
+			</header>
+
+			<aside class="breadcrumbs breadcrumbs--indent">
+				<div class="breadcrumbs__container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item">
+							<a href="#" class="breadcrumbs__link --icon-home">Home</a>
+						</li>
+
+						<li class="breadcrumbs__item">
+							<a href="#" class="breadcrumbs__link">Catigories</a>
+						</li>
+
+						<li class="breadcrumbs__item">
+							<a href="#" class="breadcrumbs__link">Vegetables</a>
+						</li>
+
+						<li class="breadcrumbs__item">
+							<a href="#" class="breadcrumbs__link">Chinese Cabbage</a>
+						</li>
+					</ul>
+				</div>
+				<img src="img/breadcrumbs/Breadcrumbs.jpg"
+					alt="Breadcrumbs backgraund image" class="breadcrumbs__bg">
+			</aside>
+
+			<main class="product">
+				<section class="product__body body-product">
+					<div class="body-product__container">
+						<div class="body-product__gallery gallery-product">
+							<div class="gallery-product__thumbs thumbs-gallery">
+								<div class="thumbs-gallery__slider swiper">
+									<div class="thumbs-gallery__wrapper swiper-wrapper">
+										<div class="thumbs-gallery__slide swiper-slide">
+											<img src="img/slider/big.jpg"
+												alt="green Chinese cabbage" class="thumbs-gallery__image">
+										</div>
+
+										<div class="thumbs-gallery__slide swiper-slide">
+											<img src="img/slider/mangoBetter.jpg"
+												alt="green Chinese cabbage" class="thumbs-gallery__image">
+										</div>
+
+										<div class="thumbs-gallery__slide swiper-slide">
+											<img src="img/slider/tomatoesBetter.jpg"
+												alt="green Chinese cabbage" class="thumbs-gallery__image">
+										</div>
+
+										<div class="thumbs-gallery__slide swiper-slide">
+											<img src="img/slider/eggplantsBetter.jpg"
+												alt="green Chinese cabbage" class="thumbs-gallery__image">
+										</div>
+
+										<div class="thumbs-gallery__slide swiper-slide">
+											<img src="img/slider/mangoBetter.jpg"
+												alt="green Chinese cabbage" class="thumbs-gallery__image">
+										</div>
+									</div>
+								</div>
+
+								<div class="thumbs-gallery__arrows">
+									<button
+										class="thumbs-gallery__arrow thumbs-gallery__arrow--up"></button>
+									<button
+										class="thumbs-gallery__arrow thumbs-gallery__arrow--down"></button>
+								</div>
+							</div>
+
+							<div class="gallery-product__main main-gallery swiper">
+								<div class="main-gallery__wrapper swiper-wrapper">
+									<div class="main-gallery__slide swiper-slide">
+										<img src="img/slider/big.jpg" alt="big Chinese cabbage"
+											class="main-gallery__image">
+									</div>
+
+									<div class="main-gallery__slide swiper-slide">
+										<img src="img/slider/mangoBetter.jpg"
+											alt="big Chinese cabbage" class="main-gallery__image">
+									</div>
+
+									<div class="main-gallery__slide swiper-slide">
+										<img src="img/slider/tomatoesBetter.jpg" alt="big Chinese cabbage"
+											class="main-gallery__image">
+									</div>
+
+									<div class="main-gallery__slide swiper-slide">
+										<img src="img/slider/eggplantsBetter.jpg"
+											alt="big Chinese cabbage" class="main-gallery__image">
+									</div>
+
+									<div class="main-gallery__slide swiper-slide">
+										<img src="img/slider/mangoBetter.jpg"
+											alt="big Chinese cabbage" class="main-gallery__image">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="body-product__content content-product">
+							<div class="content-product__header">
+								<h1 class="content-product__title">Chinese Cabbage</h1>
+								<div class="content-product__label content-product__label--in-stock">In
+									Stock</div>
+							</div>
+
+							<div class="content-product__info info-product">
+								<form action="#" class="info-product__rating rating rating--big">
+									<div class="rating__items">
+										<input type="radio" value="5" name="rating" class="rating__item">
+										<input type="radio" value="4" name="rating" class="rating__item">
+										<input type="radio" value="3" name="rating" class="rating__item">
+										<input type="radio" value="2" name="rating" class="rating__item">
+										<input type="radio" value="1" name="rating" class="rating__item">
+									</div>
+									<a href="#" class="rating__quantity">4 Review</a>
+								</form>
+
+								<div class="info-product__sku">
+									<span>SKU:</span> 2,51,594
+								</div>
+							</div>
+
+							<div class="content-product__prices price-product">
+								<div class="price-product__old">$48.00</div>
+								<div class="price-product__current">$17.28</div>
+								<div class="price-product__sale">64% Off</div>
+							</div>
+
+							<div class="content-product__description description-product">
+								<div class="description-product__header">
+									<div class="description-product__brand brand-product">
+										<div class="brand-product__label">Brand:</div>
+										<a href="#" class="brand-product__logo">
+											<img
+												src="img/brands/Group 19.jpg"
+												alt="brand image with text and logo"
+												class="brand-product__image">
+										</a>
+									</div>
+
+									<div class="description-product__social social-product">
+										<div class="social-product__label">Share item:</div>
+
+										<ul class="social-product__items social">
+											<li class="social__item">
+												<a href="#" class="social__link social__link--icon-facebook"></a>
+											</li>
+											<li class="social__item">
+												<a href="#" class="social__link social__link--icon-twitter"></a>
+											</li>
+
+											<li class="social__item">
+												<a href="#" class="social__link social__link--icon-pinterest"></a>
+											</li>
+
+											<li class="social__item">
+												<a href="#" class="social__link social__link--icon-instagram"></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="description-product__text">
+									<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+										per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec,
+										ultrices et ipsum. Nulla varius magna a consequat pulvinar.</p>
+								</div>
+							</div>
+
+							<form action="#" class="content-product__actions action-product">
+								<div class="action-product__quantity quantity">
+									<button type="button"
+										class="quantity__button quantity__button--icon-minus"></button>
+									<input value="1" type="number" class="quantity__input">
+									<button type="button"
+										class="quantity__button quantity__button--icon-plus"></button>
+								</div>
+
+								<button type="submit" class="action-product__button button">Add to
+									Cart</button>
+								<a href="#"
+									class="action-product__favorite action-product__favorite-heart"></a>
+							</form>
+
+							<div class="content-product__navigation navigation-product">
+								<div class="navigation-product__item">
+									<div class="navigation-product__label">Category:</div>
+									<a href="#" class="navigation-product__link">Vegetables</a>
+								</div>
+
+								<div class="navigation-product__item">
+									<div class="navigation-product__label">Tag:</div>
+									<ul class="navigation-product__tags">
+										<li class="navigation-product__tag"><a href="#"
+												class="navigation-product__link">Vegetables</a></li>
+										<li class="navigation-product__tag"><a href="#"
+												class="navigation-product__link">Healthy</a></li>
+										<li class="navigation-product__tag"><a href="#"
+												class="navigation-product__link">Chinese</a></li>
+										<li class="navigation-product__tag"><a href="#"
+												class="navigation-product__link">Cabbage</a></li>
+										<li class="navigation-product__tag"><a href="#"
+												class="navigation-product__link">Green Cabbage</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="product__tabs tabs-product">
+					<div class="tabs-product__container">
+						<ul class="tabs-product__nav-items">
+							<li class="tabs-product__nav-item">
+								<button type="button"
+									class="tabs-product__button tabs-product__button--active">Descriptions</button>
+							</li>
+
+							<li class="tabs-product__nav-item">
+								<button type="button" class="tabs-product__button">Additional
+									Information</button>
+							</li>
+
+							<li class="tabs-product__nav-item">
+								<button type="button" class="tabs-product__button">Customer
+									Feedback</button>
+							</li>
+						</ul>
+
+						<div class="tabs-product__body body-tabs-product">
+							<div class="body-tabs-product__item body-tabs-product__item--active">
+								<div class="body-tabs-product__description description-tab">
+									<div class="description-tab__content">
+										<p>
+											Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at
+											posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem
+											vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi
+											porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin.
+											Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed
+											et condimentum arcu, id molestie tellus. Nulla facilisi. Nam
+											scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis
+											commodo quis, egestas elementum leo. Donec convallis mollis enim.
+											Aliquam id mi quam. Phasellus nec fringilla elit.
+										</p>
+										<p>
+											Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed
+											iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit,
+											pellentesque tristique neque mi eget nulla. Proin luctus elementum
+											neque et pharetra.
+										</p>
+
+										<ul>
+											<li>100 g of fresh leaves provides.</li>
+											<li>Aliquam ac est at augue volutpat elementum.</li>
+											<li>Quisque nec enim eget sapien molestie.</li>
+											<li>Proin convallis odio volutpat finibus posuere.</li>
+										</ul>
+
+										<p>
+											Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla
+											blandit eros non turpis lobortis iaculis at ut massa.
+										</p>
+									</div>
+
+									<div class="description-tab__widget widget">
+										<iframe
+											src="https://www.youtube.com/embed/BYPGy0dFZPY"
+											frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen
+											class="widget__video">
+										</iframe>
+										<div class="widget__items">
+
+											<article class="widget__item">
+												<figure class="widget__picture">
+													<img src="img/widget/discount.svg" alt="discount icon"
+														class="widget__icon">
+												</figure>
+
+												<div class="widget__body">
+													<h5 class="widget__title">64% Discount</h5>
+													<div class="widget__text">Save your 64% money with us</div>
+												</div>
+											</article>
+
+											<article class="widget__item">
+												<figure class="widget__picture">
+													<img src="img/widget/leaf.svg" alt="leaf icon"
+														class="widget__icon">
+												</figure>
+
+												<div class="widget__body">
+													<h5 class="widget__title">100% Organic</h5>
+													<div class="widget__text">100% Organic Vegetables</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="body-tabs-product__item">
+								<div class="body-tabs-product__info info-tab">
+									<table class="info-tab__table">
+										<tr>
+											<td>Weight:</td>
+											<td>03</td>
+										</tr>
+
+										<tr>
+											<td>Color:</td>
+											<td>Green</td>
+										</tr>
+
+										<tr>
+											<td>Organic</td>
+											<td>Type:</td>
+										</tr>
+
+										<tr>
+											<td>Category:</td>
+											<td>Vegetables</td>
+										</tr>
+
+										<tr>
+											<td>Stock Status:</td>
+											<td>Available (5,413)</td>
+										</tr>
+
+										<tr>
+											<td>Tags:</td>
+											<td>Vegetables,</td>
+											<td>Healthy,</td>
+											<td>Chinese,</td>
+											<td>Cabbage,</td>
+											<td>Green Cabbage,</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+
+							<div class="body-tabs-product__item">
+								<div class="body-tabs-product__reviews reviews-tab">
+									<article class="reviews-tab__item item-review-tab">
+										<div class="item-review-tab__customer customer">
+											<figure class="customer__avatar">
+												<img src="img/testimonials/Image.jpg" alt="customer photo" class="customer__photo">
+												<figcaption class="customer__name">
+													Kristin Watson
+												</figcaption>
+											</figure>
+
+											<form action="#" class="customer__rating rating">
+												<input type="radio" value="5" name="rating" class="rating__item">
+												<input type="radio" value="4" name="rating" class="rating__item">
+												<input type="radio" value="3" name="rating" class="rating__item">
+												<input type="radio" value="2" name="rating" class="rating__item">
+												<input type="radio" value="1" name="rating" class="rating__item">
+											</form>
+
+											<time datetime="10.09.2025">2 min ago</time>
+										</div>
+
+										<div class="item-review-tab__testimonial">
+											<p>Duis at ullamcorper nulla, eu dictum eros.</p>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<section class="product__related related-products">
+					<div class="related-products__container">
+						<div
+							class="related-products__block-header block-header block-header--center block-header--indent">
+							<h2 class="block-header__title title">Related Products</h2>
+						</div>
+
+						<div class="related-products__items products">
+							<article class="products__item item-product">
+								<div class="item-product__labels">
+									<a href="#" class="item-product__label item-product__label--sale">
+										Sale
+										<span>50%</span>
+									</a>
+
+									<a href="#" class="item-product__label item-product__label--best">
+										Best Sale
+									</a>
+								</div>
+
+								<div class="item-product__actions">
+									<a href="#"
+										class="item-product__action item-product__action--like"></a>
+									<a href="#"
+										class="item-product__action item-product__action--eye">
+									</a>
+								</div>
+
+								<a href="#" class="item-product__picture">
+									<img
+										src="img/productsSection/apple.jpg"
+										alt="green apples"
+										class="item-product__image">
+								</a>
+
+								<div class="item-product__body">
+									<div class="item-product__content">
+										<h4 class="item-product__title">
+											<a href="#" class="item-product__name">Green Apple</a>
+										</h4>
+
+										<div class="item-product__price">
+											<div class="item-product__current">$14.99</div>
+											<div class="item-product__old">$20.99</div>
+										</div>
+
+										<form action="#" class="item-product__rating rating">
+											<input type="radio" value="5" name="rating" class="rating__item">
+											<input type="radio" value="4" name="rating" class="rating__item">
+											<input type="radio" value="3" name="rating" class="rating__item">
+											<input type="radio" value="2" name="rating" class="rating__item">
+											<input type="radio" value="1" name="rating" class="rating__item">
+										</form>
+									</div>
+
+									<button class="item-product__add-to-card add-to-card">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+											viewBox="0 0 20 21" fill="none">
+											<path
+												d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+												stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</article>
+
+							<article class="products__item item-product">
+								<div class="item-product__actions">
+									<a href="#"
+										class="item-product__action item-product__action--like"></a>
+									<a href="#"
+										class="item-product__action item-product__action--eye">
+									</a>
+								</div>
+
+								<a href="#" class="item-product__picture">
+									<img
+										src="img/productsSection/cauliflower.jpg"
+										alt="fresh juicy orandes"
+										class="item-product__image">
+								</a>
+
+								<div class="item-product__body">
+									<div class="item-product__content">
+										<h4 class="item-product__title">
+											<a href="#" class="item-product__name">cauliflower</a>
+										</h4>
+
+										<div class="item-product__price">
+											<div class="item-product__current">$14.00</div>
+										</div>
+
+										<form action="#" class="item-product__rating rating">
+											<input type="radio" value="5" name="rating" class="rating__item">
+											<input type="radio" value="4" name="rating" class="rating__item">
+											<input type="radio" value="3" name="rating" class="rating__item">
+											<input type="radio" value="2" name="rating" class="rating__item">
+											<input type="radio" value="1" name="rating" class="rating__item">
+										</form>
+									</div>
+
+									<button class="item-product__add-to-card add-to-card">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+											viewBox="0 0 20 21" fill="none">
+											<path
+												d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+												stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</article>
+
+							<article class="products__item item-product">
+								<div class="item-product__labels">
+									<a href="#" class="item-product__label item-product__label--sale">
+										Sale
+										<span>50%</span>
+									</a>
+
+									<span href="#" class="item-product__label item-product__label--out">
+										Out of Stock
+									</span>
+								</div>
+
+								<div class="item-product__actions">
+									<a href="#"
+										class="item-product__action item-product__action--like"></a>
+									<a href="#"
+										class="item-product__action item-product__action--eye">
+									</a>
+								</div>
+
+								<a href="#" class="item-product__picture">
+									<img
+										src="img/productsSection/greenPepper.jpg"
+										alt="green capsium"
+										class="item-product__image">
+								</a>
+
+								<div class="item-product__body">
+									<div class="item-product__content">
+										<h4 class="item-product__title">
+											<a href="#" class="item-product__name">Green Capsicum</a>
+										</h4>
+
+										<div class="item-product__price">
+											<div class="item-product__current">$12.00</div>
+											<div class="item-product__old">$15.99</div>
+										</div>
+
+										<form action="#" class="item-product__rating rating">
+											<input type="radio" value="5" name="rating" class="rating__item">
+											<input type="radio" value="4" name="rating" class="rating__item">
+											<input type="radio" value="3" name="rating" class="rating__item">
+											<input type="radio" value="2" name="rating" class="rating__item">
+											<input type="radio" value="1" name="rating" class="rating__item">
+										</form>
+									</div>
+
+									<button class="item-product__add-to-card add-to-card">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+											viewBox="0 0 20 21" fill="none">
+											<path
+												d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+												stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</article>
+
+							<article class="products__item item-product">
+								<div class="item-product__actions">
+									<a href="#"
+										class="item-product__action item-product__action--like"></a>
+									<a href="#"
+										class="item-product__action item-product__action--eye">
+									</a>
+								</div>
+
+								<a href="#" class="item-product__picture">
+									<img
+										src="img/productsSection/chilli.jpg"
+										alt="ladies finger pepper"
+										class="item-product__image">
+								</a>
+
+								<div class="item-product__body">
+									<div class="item-product__content">
+										<h4 class="item-product__title">
+											<a href="#" class="item-product__name">Ladies Finger</a>
+										</h4>
+
+										<div class="item-product__price">
+											<div class="item-product__current">$11.00</div>
+										</div>
+
+										<form action="#" class="item-product__rating rating">
+											<input type="radio" value="5" name="rating" class="rating__item">
+											<input type="radio" value="4" name="rating" class="rating__item">
+											<input type="radio" value="3" name="rating" class="rating__item">
+											<input type="radio" value="2" name="rating" class="rating__item">
+											<input type="radio" value="1" name="rating" class="rating__item">
+										</form>
+									</div>
+
+									<button class="item-product__add-to-card add-to-card">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+											viewBox="0 0 20 21" fill="none">
+											<path
+												d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+												stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+			</main>
+			<aside class="subscribe">
+				<div class="subscribe__container">
+					<div class="subscribe__content">
+						<h4 class="subscribe__title">Subcribe our Newsletter</h4>
+						<div class="subscribe__text">
+							<p>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
+								Phasellus imperdiet elit eu magna.</p>
+						</div>
+					</div>
+
+					<form action="#" class="subscribe__form">
+						<input
+							type="email"
+							class="subscribe__input"
+							placeholder="Your email address"
+							required>
+						<button type="submit" class="subscribe__button button">Subscribe</button>
+					</form>
+
+					<ul class="subscribe__social social">
+						<li class="social__item">
+							<a href="#" class="social__link social__link--icon-facebook"></a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link social__link--icon-twitter"></a>
+						</li>
+
+						<li class="social__item">
+							<a href="#" class="social__link social__link--icon-pinterest"></a>
+						</li>
+
+						<li class="social__item">
+							<a href="#" class="social__link social__link--icon-instagram"></a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!-- <a href="/_components.html">components</a> -->
+			<footer class="footer">
+				<div class="footer__body body-footer">
+					<div class="body-footer__container">
+						<div class="body-footer__content">
+							<div class="body-footer__logo logo-footer">
+								<img src="img/svg/zelena_gilochka.svg" alt="logo icon"
+									class="logo-footer__icon">
+								<div class="logo-footer__text">Ecobazar</div>
+							</div>
+
+							<div class="body-footer__text">
+								<p>
+									Morbi cursus porttitor enim lobortis molestie.
+									Duis gravida turpis dui, eget bibendum magna congue nec.
+								</p>
+							</div>
+
+							<div class="body-footer__links">
+								<a href="tel:2195550114" class="body-footer__link">(219) 555-0114</a>
+								<span>or</span>
+								<a href="mailto:Proxy@gmail.com"
+									class="body-footer__link">Prkjhlj45lkjggnj5554oxy@gmail.com</a>
+							</div>
+						</div>
+						<div class="body-footer__menus menus-footer">
+							<div class="menus-footer__column">
+								<h5 class="menus-footer__title">My Account</h5>
+
+								<ul class="menus-footer__list">
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">My Account</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Order History</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Shoping Cart</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Wishlist</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="menus-footer__column">
+								<h5 class="menus-footer__title">Helps</h5>
+
+								<ul class="menus-footer__list">
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Contact</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Faqs</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Terms & Condition</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Privacy Policy</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="menus-footer__column">
+								<h5 class="menus-footer__title">Proxy</h5>
+
+								<ul class="menus-footer__list">
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">About</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Shop</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Product</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Track Order</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="menus-footer__column">
+								<h5 class="menus-footer__title">Categories</h5>
+
+								<ul class="menus-footer__list">
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Fruit & Vegetables</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Meat & Fish</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Bread & Bakery</a>
+									</li>
+
+									<li class="menus-footer__item">
+										<a href="#" class="menus-footer__link">Beauty & Health</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__bottom bottom-footer">
+					<div class="bottom-footer__container">
+						<div class="bottom-footer__copy">
+							Ecobazar eCommerce © 2025. All Rights Reserved
+						</div>
+
+						<ul class="bottom-footer__payments payments">
+							<li class="payments__item">
+								<img src="img/footerPayments/pay.svg" alt="icon pay apple">
+							</li>
+
+							<li class="payments__item">
+								<img src="img/footerPayments/visa.svg" alt="icon pay visa">
+							</li>
+
+							<li class="payments__item">
+								<img src="img/footerPayments/discover.svg" alt="icon pay discover">
+							</li>
+
+							<li class="payments__item">
+								<img src="img/footerPayments/mastercard.svg" alt="icon pay mastercard">
+							</li>
+
+							<li class="payments__item">
+								<img src="img/footerPayments/secure.svg" alt="some secure payment">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+		</script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

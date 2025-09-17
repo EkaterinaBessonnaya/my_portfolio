@@ -1,0 +1,210 @@
+@use "_iconfont.scss";
+@use "_colors.scss" as *;
+@use "_mixins.scss" as *;
+
+.footer {
+  background-color: $grey9;
+  // .footer__container
+
+  // .footer__body
+
+  &__body {
+    padding-block: toRem(60);
+  }
+}
+.body-footer {
+	border-top: toRem(1) solid $grey8;
+	padding-block: toRem(24);
+  // .body-footer__container
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+		flex-wrap: wrap;
+		column-gap: toRem(50);
+    // @include adaptiveValue("row-gap", 50, 30);
+    // @include adaptiveValue("column-gap", 100, 80, 0, $containerWidth, $tablet);
+
+    @media (max-width: toRem($tablet)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .body-footer__content
+
+  &__content {
+    flex-basis: toRem(340);
+    display: grid;
+    gap: toRem(16);
+
+    color: $grey5;
+    @include typography("S");
+
+    @media (max-width: toRem($tablet)) {
+      flex-basis: 100%;
+    }
+  }
+
+  // .body-footer__logo
+
+  &__logo {
+  }
+
+  // .body-footer__text
+
+  &__text {
+  }
+
+  // .body-footer__links
+
+  &__links {
+    display: flex;
+		flex-wrap: wrap;
+    gap: toRem(20);
+
+		@media (max-width: toRem($tablet)){
+			margin-bottom: toRem(50);
+		}
+  }
+
+  // .body-footer__link
+
+  &__link {
+    color: $white;
+    @include typography("S", 500);
+    text-decoration: underline;
+    text-decoration-color: $success;
+    text-underline-offset: toRem(8);
+    text-decoration-thickness: toRem(2);
+    transition: text-decoration-color 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        text-decoration-color: $warning;
+      }
+    }
+  }
+
+  // .body-footer__menus
+
+  &__menus {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    column-gap: toRem(15);
+		row-gap: toRem(20);
+    // @include adaptiveValue("column-gap", 100, 20);
+
+    @media (max-width: toRem($tablet)) {
+      flex-wrap: wrap;
+    }
+  }
+}
+.logo-footer {
+  display: flex;
+  align-items: center;
+  gap: toRem(8);
+  color: $white;
+  // .logo-footer__icon
+
+  &__icon {
+  }
+
+  // .logo-footer__text
+
+  &__text {
+    @include typography("h5", 500);
+  }
+}
+.menus-footer {
+  // .menus-footer__column
+
+  &__column {
+  }
+
+  // .menus-footer__title
+
+  &__title {
+    color: $white;
+    @include typography("M", 500);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  // .menus-footer__list
+
+  &__list {
+  }
+
+  // .menus-footer__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+  }
+
+  // .menus-footer__link
+
+  &__link {
+    color: $grey4;
+    @include typography("S");
+    transition: all 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        color: $success;
+        // text-decoration: underline;
+      }
+    }
+  }
+}
+.bottom-footer {
+  border-top: toRem(1) solid $grey8;
+  padding-block: toRem(24);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(15);
+
+		@media (max-width: toRem($tablet)){
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+  }
+
+  // .bottom-footer__copy
+
+  &__copy {
+		@include typography("S")
+  }
+
+  // .bottom-footer__payments
+
+  &__payments {
+  }
+}
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: toRem(8);
+  // .payments__item
+
+  &__item {
+    transition: scale 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

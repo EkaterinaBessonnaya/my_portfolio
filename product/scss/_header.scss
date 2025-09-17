@@ -1,0 +1,638 @@
+@use "_iconfont.scss";
+@use "_colors.scss" as *;
+@use "_mixins.scss" as *;
+
+.header {
+  // position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: $white;
+  // .header__top
+
+  &__top {
+    @media (min-width: toRem($mobile)) {
+      border: 1px solid $grey1;
+    }
+  }
+}
+.top-header {
+  background-color: $grey8;
+  color: $grey3;
+  // .top-header__container
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-block: toRem(12);
+    align-items: center;
+    gap: toRem(5) toRem(10);
+
+    @media (max-width: toRem($mobile)) {
+      flex-direction: column-reverse;
+      gap: toRem(20);
+    }
+  }
+
+  // .top-header__location
+
+  // &__location {
+  // }
+
+  &__link-location {
+    display: inline-flex;
+    align-items: center;
+    gap: toRem(8);
+    transition: color 0.5s;
+    @include typography("T");
+
+    &::before {
+      align-self: flex-start;
+      @include typography("L");
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        color: $success;
+      }
+    }
+
+    @media (max-width: toRem($mobile)) {
+      color: $white;
+
+      @include typography("L");
+      &::before {
+        @include typography("XXL");
+      }
+    }
+  }
+
+  // .top-header__actions
+
+  // &__actions {
+  // }
+
+  // @media (max-width: toRem($mobile)) {
+  //   display: none;
+  // }
+}
+
+.actions-top-header {
+  display: flex;
+  align-items: center;
+  gap: toRem(20);
+
+  &__lang-currency {
+  }
+
+  // .actions-top-header__auth
+
+  &__auth {
+  }
+
+  @media (max-width: toRem($mobile)) {
+    flex-direction: column;
+  }
+}
+
+.lang-currency {
+  display: flex;
+  align-items: center;
+  gap: toRem(20);
+
+  @media (min-width: toRem($mobile)) {
+    &::after {
+      content: "";
+      width: toRem(1);
+      height: toRem(20);
+      background-color: $grey1;
+    }
+  }
+
+  &__select {
+    padding-right: toRem(10.5);
+    // appearance: none;
+    background-color: $grey8;
+    @include typography("T");
+
+    @media (max-width: toRem($mobile)) {
+      @include typography("XXL");
+      padding: toRem(10);
+      color: $grey7;
+      option {
+        color: red;
+      }
+    }
+  }
+
+  // .lang-currency__item
+
+  // &__item {
+  // }
+}
+.auth-top-header {
+  @include typography("T");
+  // .auth-top-header__link
+
+  &__link {
+    @include typography("T");
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: toRem($mobile)) {
+      @include typography("XL");
+      color: $white;
+    }
+  }
+}
+
+// -----------------------------------------header-middle-----------------------------------------------//
+
+// .header {
+//   .header__middle
+
+//   &__middle {
+//   }
+// }
+.middle-header {
+  // .middle-header__container
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(5) toRem(20);
+    padding-block: toRem(24);
+    border-bottom: toRem(1) solid $grey1;
+
+    @media (max-width: toRem($mobile)) {
+      padding-block: toRem(10);
+    }
+  }
+
+  // .middle-header__logo
+
+  &__logo {
+    flex-shrink: 0;
+
+    @media (max-width: toRem($mobile)) {
+      flex-grow: 1;
+    }
+  }
+
+  &__place-search {
+    flex-basis: toRem(498);
+
+    @media (max-width: toRem($mobile)) {
+      display: none;
+    }
+  }
+
+  // .middle-header__search
+
+  &__search {
+    flex-grow: 1;
+
+    @media (min-width: toRem($tablet)) {
+      margin-left: toRem(8);
+    }
+  }
+
+  // .middle-header__actions
+
+  &__actions {
+    flex-shrink: 0;
+  }
+}
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: toRem(9);
+
+  // .logo-header__icon
+
+  // &__icon {
+  // }
+
+  // .logo-header__text
+
+  &__text {
+    color: $green9;
+    @include typography("h5", 500);
+
+    @media (max-width: toRem(380)) {
+      @include typography("XXL", 500);
+    }
+  }
+}
+.search-header {
+  position: relative;
+  display: flex;
+  // align-items: center;
+
+  outline: toRem(1) solid $grey1;
+  border-radius: toRem(6);
+  overflow: hidden;
+
+  &:not(.--dynamic) {
+    outline: toRem(1) solid $grey1;
+  }
+
+  @media (max-width: toRem($tablet)) {
+    height: toRem(44);
+  }
+  // .search-header__input
+
+  &__input {
+    min-height: toRem(43);
+    border-radius: toRem(6) 0 0 toRem(6);
+    padding-left: toRem(44);
+    padding-right: toRem(10);
+    @include typography("M");
+    background-color: $white;
+    color: $grey9;
+
+    &::placeholder {
+      color: $grey5;
+      transition: opacity 0.3s;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+
+  // .search-header__button
+
+  &__button {
+    padding-inline: toRem(24);
+    border-radius: 0rem toRem(6) toRem(6) 0rem;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: toRem(17.5);
+    translate: 0 -50%;
+    @include typography("M");
+    color: $grey9;
+    pointer-events: none;
+  }
+}
+// .search-header--icon-link {
+// }
+
+.actions-header {
+  display: flex;
+  align-items: center;
+  gap: toRem(17.4);
+
+  // .actions-header__favorite
+  &__favorite {
+    display: flex;
+    gap: toRem(17.4);
+    transition: scale 0.3s;
+
+    @media (min-width: toRem($mobile)) {
+      &:not(:last-child) {
+        &::after {
+          content: "";
+          width: toRem(1);
+          height: toRem(24);
+          background-color: $grey2;
+        }
+      }
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+
+  // .actions-header__icon-heart
+
+  &__icon-heart {
+    background: url(../img/icons/favorite.svg) no-repeat center / cover;
+    width: 32px;
+    height: 32px;
+  }
+
+  // .actions-header__card
+
+  // &__card {
+  // }
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: toRem(12);
+  transition: color 0.5s, scale 0.9s;
+
+  &__icon-bag {
+    position: relative;
+    background: url(../img/icons/bag.svg) no-repeat center / cover;
+    width: 34px;
+    height: 34px;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    span {
+      position: absolute;
+      right: toRem(-2.5);
+      top: toRem(-2.5);
+      width: toRem(18);
+      font-size: toRem(10);
+      line-height: 1;
+      color: $white;
+
+      aspect-ratio: 1;
+      background-color: $successDark;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // .card-header__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(7);
+
+    @media (max-width: toRem($mobile)) {
+      display: none;
+    }
+  }
+
+  // .card-header__label
+
+  &__label {
+    color: $grey7;
+    @include typography("XT");
+  }
+
+  // .card-header__value
+
+  &__value {
+    @include typography("S", 500);
+    color: $green9;
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      .card-header__label,
+      .card-header__value {
+        color: $successDark;
+      }
+    }
+  }
+}
+
+// -----------------------------------------header-bottom-----------------------------------------------//
+
+// .header {
+//   .header__bottom
+
+//   &__bottom {
+//   }
+// }
+.bottom-header {
+  // .bottom-header__container
+
+  &__container {
+    display: flex;
+    gap: toRem(10);
+  }
+
+  // .bottom-header__menu
+
+  &__menu {
+    flex-grow: 1;
+  }
+
+  // .bottom-header__phone
+
+  &__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: toRem(8);
+    flex-shrink: 0;
+    align-self: flex-start;
+    padding-block: toRem(19.5);
+    color: $grey6;
+    transition: color 0.5s;
+
+    @include typography("S", 500);
+
+    &::before {
+      // content: "";
+      // background-image: url(../img/icons/phone.svg);
+      // background-size: contain;
+      // background-position: center;
+      // width: toRem(32);
+      // height: toRem(32);
+      @include typography("XL");
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        color: $success;
+      }
+    }
+
+    &.--dynamic {
+      &::before {
+        @include typography("h5");
+        color: $green9;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+.menu {
+  display: flex;
+
+  @media (max-width: toRem($mobile)) {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 29%;
+    left: 100%;
+    transition: left 0.5s;
+    overflow: auto;
+    padding: toRem(40) toRem(15) toRem(30) toRem(15);
+    // z-index: 5;
+    background-color: $successDark;
+
+    .open-menu & {
+      left: 0;
+    }
+  }
+  // .menu__body
+
+  &__body {
+    display: flex;
+  }
+
+  // .menu__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(0) toRem(35);
+
+    @media (max-width: toRem($mobile)) {
+      flex-direction: column;
+      margin-bottom: toRem(15);
+    }
+  }
+
+  // .menu__item
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: toRem(6.7);
+    transition: color 0.3s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        color: $success;
+
+        .sub-menu {
+          opacity: 0.8;
+          visibility: visible;
+          pointer-events: auto;
+          translate: 0 toRem(0);
+        }
+      }
+    }
+
+    @media (max-width: toRem($mobile)) {
+      color: $white;
+    }
+
+    &.--active {
+      color: $success;
+
+      .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        translate: 0 toRem(0);
+      }
+
+      .menu__button {
+        &::before {
+          rotate: 180deg;
+          color: $success;
+        }
+      }
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    padding-block: toRem(16);
+    display: flex;
+    align-items: center;
+    transition: color 0.5s;
+    @include typography("S", 500);
+    flex-wrap: wrap;
+
+    @media (max-width: toRem($mobile)) {
+      padding-block: toRem(10);
+      @include typography("XXL", 500);
+    }
+  }
+
+  // .menu__button
+
+  &__button {
+    display: flex;
+    align-items: center;
+    transition: color 0.5s;
+    @include typography("T", 600);
+
+    &::before {
+      font-size: toRem(8);
+      // color: $grey9;
+    }
+
+    [data-touch] & {
+      @include typography("XL", 600);
+    }
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  left: toRem(-15);
+  top: 100%;
+  width: toRem(150);
+
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 toRem(10);
+  transition: all 0.5s;
+  background-color: $grey5;
+  padding: toRem(15);
+  border-radius: 0 0 toRem(8) toRem(8);
+  // .sub-menu__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+  }
+
+  // .sub-menu__link
+
+  &__link {
+    @include typography("M");
+    color: $white;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: toRem($mobile)) {
+      @include typography("XL");
+    }
+  }
+
+  // @media (min-width: toRem($mobile)) {
+  //   flex-grow: 1;
+  //   flex-basis: 100%;
+  // }
+
+  @media (max-width: toRem($mobile)) {
+    position: absolute;
+    left: 70%;
+    top: 10%;
+    pointer-events: none;
+    z-index: -1;
+    background-color: $grey8;
+  }
+}

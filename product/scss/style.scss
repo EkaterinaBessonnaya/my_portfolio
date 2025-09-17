@@ -1,0 +1,40 @@
+@use "sass:math";
+@use "_iconfont.scss";
+@use "_mixins.scss" as *;
+@use "_colors.scss" as *;
+@use "_components.scss";
+//pages
+@use "_header.scss";
+@use "_footer.scss";
+@use "_product.scss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  // font-size: toRem(14);
+  @include typography();
+  color: $grey6;
+
+  &.scroll-lock {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior:none;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+
+  > .page {
+    flex-grow: 1;
+  }
+}
+
+[class*="__container"] {
+  max-width: toRem($containerWidth);
+  padding-inline: toRem(math.div($containerPadding, 2));
+  margin: 0 auto;
+  @include typography("M", 500);
+}
