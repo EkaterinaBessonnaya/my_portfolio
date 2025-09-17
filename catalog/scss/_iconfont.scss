@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*="--icon-"]::before {
+  content: "";
+  font-family: "iconfont";
+  line-height: 1 !important;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="--icon-arrow"]::before {
+  content: "\e902";
+}
+
+[class*="--icon-chevron"]::before {
+  content: "\e900";
+}
+
+[class*="--icon-home"]::before {
+  content: "\e901";
+}
+[class*="--icon-author"]::before {
+  content: "\e903";
+}
+
+
+[class*="--icon-bag"]::before {
+  content: "\e904";
+}
+
+[class*="--icon-check"]::before {
+  content: "\e905";
+}
+
+[class*="--icon-comments"]::before {
+  content: "\e906";
+}
+
+[class*="--icon-cross"]::before {
+  content: "\e907";
+}
+
+[class*="--icon-error"]::before {
+  content: "\e908";
+}
+
+[class*="--icon-eye"]::before {
+  content: "\e909";
+}
+
+[class*="--icon-facebook"]::before {
+  content: "\e90a";
+}
+
+[class*="--icon-favorite"]::before {
+  content: "\e90b";
+}
+
+[class*="--icon-instagram"]::before {
+  content: "\e90c";
+}
+
+[class*="--icon-label"]::before {
+  content: "\e917";
+}
+
+[class*="--icon-link"]::before {
+  content: "\e916";
+}
+
+[class*="--icon-location"]::before {
+  content: "\e90d";
+}
+
+[class*="--icon-minus"]::before {
+  content: "\e90e";
+}
+
+[class*="--icon-phone"]::before {
+  content: "\e90f";
+}
+
+[class*="--icon-pinterest"]::before {
+  content: "\e910";
+}
+
+[class*="--icon-search"]::before {
+  content: "\e911";
+}
+
+[class*="--icon-shevron"]::before {
+  content: "\e912";
+}
+
+[class*="--icon-success"]::before {
+  content: "\e913";
+}
+
+[class*="--icon-twitter"]::before {
+  content: "\e914";
+}
+
+[class*="--icon-warning"]::before {
+  content: "\e915";
+}
+
+[class*="--icon-filter"]::before {
+  content: "\e918";
+}

@@ -1,0 +1,987 @@
+@use "_iconfont.scss";
+@use "_mixins.scss" as *;
+@use "_colors.scss" as *;
+
+.title {
+  color: $grey9;
+  line-height: 1.5;
+  @include typography("h5", 600);
+}
+
+.link-arrow {
+  color: $success;
+  line-height: 1.5;
+  @include typography("M", 500);
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: toRem(12);
+  transition: color 0.3s;
+
+  &::before {
+    content: "\e902";
+    font-family: "iconfont";
+    @include typography("M");
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      color: $successDark;
+      cursor: pointer;
+    }
+  }
+}
+
+.block-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: toRem(10);
+
+  &--indent {
+    margin-bottom: toRem(20);
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &__title {
+    align-self: center;
+    flex-grow: 1;
+  }
+
+  // .
+  &__slider-arrows {
+    display: flex;
+    flex-shrink: 0;
+    gap: toRem(12);
+  }
+
+  &__slider-arrow {
+    width: toRem(45);
+    aspect-ratio: 1;
+    background-color: $white;
+    border: 1px solid $grey1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include typography("M");
+    color: $grey9;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+
+    &--left {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+
+    // &--icon-arrow {
+
+    // }
+
+    // &--right {
+
+    // }
+
+    &.swiper-button-lock {
+      display: none;
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        background-color: $success;
+        border-color: transparent;
+        color: $white;
+      }
+    }
+  }
+}
+
+// ------------------------------------button--------------------------------------//
+
+.button {
+  padding-inline: toRem(40);
+  padding-block: toRem(16);
+  border-radius: toRem(43);
+  background-color: $success;
+  transition: background-color 0.5s, color 0.5s;
+  @include typography("M", 600);
+  color: $white;
+
+  &--white {
+    background-color: $white;
+    color: $success;
+  }
+
+  &--small {
+    @include typography("T", 600);
+    padding-inline: toRem(24);
+    padding-block: toRem(10);
+  }
+
+  &--middle {
+    @include typography("S", 600);
+    padding-inline: toRem(24);
+    padding-block: toRem(14);
+  }
+
+  &--arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(15);
+    flex-direction: row-reverse;
+
+    &::before {
+      content: "\e900";
+      font-family: "iconfont";
+      @include typography("T", 600);
+    }
+  }
+
+  &--filter {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(15);
+    flex-direction: row-reverse;
+
+    &::before {
+      content: "\e901";
+      font-family: "iconfont";
+      @include typography("T", 600);
+    }
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      color: $white;
+      background-color: $successDark;
+    }
+  }
+
+  &--white {
+    background-color: $white;
+    color: $success;
+  }
+}
+
+// ------------------------------------icon-menu--------------------------------------//
+
+.icon-menu {
+  @media (min-width: toRem($mobile)) {
+    display: none;
+  }
+
+  @media (max-width: toRem($mobile)) {
+    position: relative;
+    width: toRem(30);
+    height: toRem(18);
+    flex-shrink: 0;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: toRem(2);
+      width: 100%;
+      right: 0;
+      transition: all 0.5s;
+      background-color: $green9;
+    }
+
+    span {
+      top: 50%;
+      translate: 0 -50%;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    .open-menu & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: 50%;
+        rotate: -45deg;
+      }
+
+      &::after {
+        top: 50%;
+        rotate: 45deg;
+      }
+    }
+  }
+}
+
+// ------------------------------------rating--------------------------------------//
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+
+  &__items {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: toRem(2);
+  }
+  // .rating__item
+
+  &__item {
+    width: toRem(12);
+    aspect-ratio: 1;
+    appearance: none;
+    background: url(../img/icons/starGrey.svg) 0 0 / 100% no-repeat;
+
+    &:checked,
+    &:checked ~ * {
+      background: url(../img/icons/starYellow.svg) 0 0 / 100% no-repeat;
+    }
+  }
+
+  &__quantity {
+    @include typography("T");
+    color: $grey5;
+  }
+
+  &__value{
+    @include typography("S");
+    color: $grey9;
+  }
+}
+
+// ------------------------------------products--------------------------------------//
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(toRem(312), 1fr));
+
+  @media (max-width(toRem(530))) {
+    grid-column: toRem(100);
+    grid-row: toRem(100);
+  }
+  // .products__item
+}
+
+// ------------------------------------product-item--------------------------------------//
+
+.item-product {
+  position: relative;
+  border: toRem(1) solid $grey1;
+  background-color: $white;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  .catalog & {
+    border-radius: toRem(8);
+  }
+
+  &--mini {
+    display: flex;
+
+    .item-product__picture {
+      width: toRem(112);
+    }
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      // z-index: 2;
+      border: toRem(1) solid $successDark;
+      box-shadow: 0 0 toRem(12) 0 rgba(32, 181, 38, 0.32);
+
+      .item-product__add-to-card {
+        background-color: $success;
+
+        svg path {
+          stroke: $white;
+        }
+      }
+
+      .item-product__title {
+        color: $successDark;
+      }
+
+      .item-product__actions {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  // .item-product__labels
+
+  &__labels {
+    display: flex;
+    gap: toRem(8);
+    flex-wrap: wrap;
+    top: toRem(16);
+    left: toRem(16);
+    position: absolute;
+  }
+
+  // .item-product__label
+
+  &__label {
+    padding: toRem(3) toRem(8);
+    border-radius: toRem(4);
+    border: toRem(1) solid transparent;
+    color: $white;
+    transition: border 0.5s;
+
+    @include typography("S");
+
+    span {
+      font-weight: 500;
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        border: toRem(1) solid $green9;
+      }
+    }
+  }
+
+  // .item-product__label--sale
+
+  &__label--sale {
+    background-color: $error;
+  }
+
+  // .item-product__label--best
+
+  &__label--best {
+    background-color: $blue;
+  }
+
+  &__label--out {
+    background-color: $green9;
+  }
+
+  // .item-product__actions
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(6);
+    // translate: toRem(50) 0;
+    position: absolute;
+    top: toRem(16);
+    right: toRem(16);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: 15;
+
+    [data-touch] & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // .item-product__action
+
+  &__action {
+    width: toRem(40);
+    aspect-ratio: 1;
+    border: toRem(1) solid $grey05;
+    border-radius: 50%;
+    // background-color: $white;
+
+    &--like {
+      background: url(../img/svg/like.Hover.svg) center no-repeat;
+    }
+
+    &--eye {
+      background: url(../img/icons/eye.svg) center no-repeat;
+      background-color: $white;
+    }
+  }
+
+  // .item-product__picture
+
+  &__picture {
+    padding: toRem(5);
+    aspect-ratio: 259 / 235;
+  }
+
+  // .item-product__image
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  // .item-product__body
+
+  &__body {
+    padding: toRem(12);
+    display: flex;
+    gap: toRem(10);
+    align-items: center;
+  }
+
+  // .item-product__content
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  // .item-product__title
+
+  &__title {
+    color: $grey7;
+    @include typography("S");
+    transition: color 0.5s;
+    line-height: 1.5;
+  }
+
+  // .item-product__name
+
+  &__name {
+  }
+
+  // .item-product__price
+
+  &__price {
+    display: flex;
+    gap: toRem(2);
+    align-items: center;
+    line-height: 1.5;
+    &:not(:last-child) {
+      margin-bottom: toRem(6);
+    }
+  }
+
+  // .item-product__current
+
+  &__current {
+    @include typography("M", 500);
+    color: $grey9;
+  }
+
+  // .item-product__old
+
+  &__old {
+    @include typography("M");
+    color: $grey4;
+    text-decoration: line-through;
+  }
+
+  // .item-product__rating
+
+  &__rating {
+    flex-direction: row-reverse;
+    gap: toRem(2);
+  }
+
+  &__add-to-card {
+    width: toRem(40);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey05;
+    border-radius: 50%;
+    transition: all 0.5s;
+
+    // svg path {
+    //   stroke: $grey9;
+    // }
+  }
+
+  // .item-product__add-to-card
+
+  &__line-actions {
+    position: absolute;
+    width: 100%;
+    bottom: toRem(24);
+    left: toRem(0);
+  }
+
+  &__countdown {
+    width: toRem(251);
+    margin: 0 auto;
+  }
+
+  // .item-product__add-to-card
+  &__add-to-card {
+  }
+}
+
+// ===============================countdown============================================ //
+
+.countdown {
+  &--mini {
+    .countdown__digits {
+      @include typography("L", 500);
+      color: $grey9;
+    }
+
+    .countdown__labels {
+      font-size: toRem(10);
+      color: $grey4;
+    }
+  }
+
+  &__label {
+    text-align: center;
+    @include typography("S");
+    color: $grey4;
+    &:not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+  }
+
+  // .countdown__timer
+  &__timer {
+    text-align: center;
+  }
+
+  &__digits {
+    margin-bottom: toRem(6);
+    display: flex;
+
+    span {
+      position: relative;
+      flex-grow: 1;
+      flex-basis: toRem(20);
+
+      &:not(:last-child) {
+        &::after {
+          content: ":";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          translate: 0 -50%;
+        }
+      }
+    }
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+
+  // .countdown__digits
+
+  &__digits {
+    @include typography("XXL");
+  }
+
+  // .countdown__labels
+
+  &__labels {
+    @include typography("T");
+    text-transform: uppercase;
+  }
+}
+
+// ===============================line-actions========================================== //
+
+.line-actions {
+  display: flex;
+  gap: toRem(8);
+  padding-inline: toRem(24);
+
+  &__add-to-card {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(12);
+    background-color: $grey05;
+    color: $grey9;
+    transition: all 0.5s;
+
+    // &::after {
+    //   content: "";
+    //   background: url(../img/icons/bag_white.svg) no-repeat;
+    //   width: toRem(20);
+    //   height: toRem(20);
+    // }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+  // .line-actions__item
+  &__item {
+    width: toRem(46);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        background-color: $successDark;
+      }
+    }
+  }
+
+  // .line-actions__item--like
+
+  &__item--like {
+    background: url(../img/icons/like.svg) center no-repeat;
+    background-color: $grey05;
+  }
+
+  // .line-actions__item--eye
+
+  &__item--eye {
+    background: url(../img/icons/eye.svg) center no-repeat;
+    background-color: $grey05;
+  }
+}
+
+// ===============================add-to-card========================================== //
+
+.add-to-card {
+}
+
+// ===============================reviews========================================== //
+
+.reviews {
+  background-color: $grey05;
+  padding-block: toRem(60);
+  // .reviews__container
+  &__container {
+  }
+
+  // .reviews__block-header
+  &__block-header {
+  }
+
+  // .reviews__slider
+  &__slider {
+    @media (max-width: toRem(768)) {
+      margin-inline: toRem(-15);
+      padding-inline: toRem(15);
+    }
+  }
+}
+
+.item-review {
+  border-radius: toRem(8);
+  background-color: $white;
+  box-shadow: 0 toRem(10) toRem(20) rgb(0, 0, 0, 0.01);
+  padding: toRem(24);
+
+  &__quote {
+    margin-bottom: toRem(16);
+    background: url(../img/icons/quote.svg) no-repeat center / contain;
+    width: toRem(32);
+    height: toRem(26);
+  }
+
+  // .item-review__text
+  &__text {
+    margin-bottom: toRem(24);
+    color: $grey7;
+    @include typography("S");
+  }
+
+  // .item-review__footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  // .item-review__author
+  &__author {
+    flex-grow: 1;
+  }
+
+  // .item-review__rating
+  &__rating {
+  }
+
+  .rating__item {
+    width: toRem(18);
+  }
+}
+
+.author-review {
+  display: flex;
+  align-items: center;
+  gap: toRem(12);
+
+  // .author-review__picture
+  &__picture {
+    width: toRem(56);
+    aspect-ratio: 1;
+  }
+
+  // .author-review__avatar
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  // .author-review__body
+  &__body {
+  }
+
+  // .author-review__title
+  &__title {
+    @include typography("M", 500);
+    color: $green9;
+    line-height: 1.5;
+  }
+
+  // .author-review__type
+  &__type {
+    @include typography("S");
+    color: $grey4;
+    line-height: 1.5;
+  }
+}
+
+// ===============================subscribe========================================== //
+
+.subscribe {
+  background-color: $greyAdditional;
+  padding-block: toRem(40);
+
+  // .subscribe__container
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: toRem(40);
+
+    @media (max-width: toRem(1110)) {
+      flex-wrap: wrap;
+      gap: toRem(25);
+    }
+  }
+
+  // .subscribe__content
+  &__content {
+    flex-grow: 1;
+  }
+
+  // .subscribe__title
+  &__title {
+    @include typography("XXL", 600);
+    color: $grey9;
+    line-height: 1.5;
+  }
+
+  // .subscribe__text
+  &__text {
+    @include typography("S");
+    color: $grey4;
+    line-height: 1.5;
+
+    @media (min-width: toRem(991)) {
+      min-width: toRem(450);
+    }
+  }
+
+  // .subscribe__form
+  &__form {
+    min-width: min(toRem(375), 100%);
+    display: flex;
+    flex-basis: 50.5%;
+    border-radius: toRem(46);
+    border: toRem(1) solid $grey1;
+    background-color: $white;
+
+    @media (max-width: toRem(991)) {
+      flex-grow: 1;
+    }
+
+    @media (max-width: toRem(440)) {
+      flex-direction: column;
+      gap: toRem(5);
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  // .subscribe__input
+  &__input {
+    padding: toRem(14) toRem(24);
+    flex-grow: 1;
+    outline: none;
+    height: toRem(52);
+    border-radius: toRem(46) 0 0 toRem(46);
+    @include typography("M");
+    color: $grey9;
+
+    &::placeholder {
+      color: $grey5;
+      transition: all 0.5s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: toRem(440)) {
+      border-radius: toRem(46);
+      border: toRem(1) solid $grey1;
+      background-color: $white;
+    }
+  }
+
+  // .subscribe__button
+  &__button {
+  }
+
+  // .subscribe__social
+  &__social {
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-wrap: wrap;
+  gap: toRem(8);
+  // .social__item
+  &__item {
+    width: toRem(40);
+    flex-shrink: 0;
+    flex-grow: 0;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  // .social__link
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(11);
+    border-radius: 50%;
+    color: $grey7;
+    @include typography("L");
+    transition: all 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        background-color: $success;
+        color: white;
+      }
+    }
+
+    // .social__link--icon-facebook
+    &--icon-facebook {
+      @include typography("h5");
+      padding: toRem(5);
+    }
+  }
+}
+
+// ===============================breadcrumbs========================================== //
+.breadcrumbs {
+  background-color: $grey9;
+  position: relative;
+
+  &--indent {
+    margin-bottom: toRem(32);
+  }
+
+  // .breadcrumbs__container
+  &__container {
+  }
+
+  // .breadcrumbs__list
+  &__list {
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: toRem(20);
+    align-items: center;
+    padding-block: toRem(48);
+  }
+
+  // .breadcrumbs__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+
+    &::after {
+      font-family: "iconfont";
+      content: "\e900";
+      font-size: toRem(8);
+      rotate: -90deg;
+    }
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover::after {
+        color: $success;
+      }
+    }
+  }
+
+  // .breadcrumbs__link
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+    @include typography("M");
+    color: $grey4;
+    transition: color 0.5s;
+
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        color: $success;
+      }
+    }
+  }
+
+  // .breadcrumbs__image
+  &__image {
+    width: toRem(15);
+  }
+
+  // .breadcrumbs__bg
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: right;
+
+    @media (max-width: toRem($tablet)) {
+      opacity: 0.2;
+    }
+  }
+}

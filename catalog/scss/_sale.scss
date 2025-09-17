@@ -1,0 +1,130 @@
+@use "_iconfont.scss";
+@use "_colors.scss" as *;
+@use "_mixins.scss" as *;
+
+.sale {
+  // .sale__container
+  &__container {
+    display: grid;
+    grid-template-columns: 
+			repeat(auto-fill,minmax(min(toRem(380), 100%), 1fr));
+    gap: toRem(24);
+
+		@media (max-width: toRem($tablet)){
+			grid-template-columns: 
+				repeat(auto-fill,minmax(min(toRem(230), 100%), 0.5fr)); 
+		}
+
+		@media (max-width: toRem($mobile)){
+			grid-template-columns: 
+				repeat(auto-fill,minmax(min(toRem(180), 100%), 1fr));  
+		}
+  }
+
+  // .sale__item
+
+  &__item {
+  }
+}
+.item-sale {
+  position: relative;
+  overflow: hidden;
+  border-radius: toRem(8);
+  color: $white;
+
+  &--black {
+    color: $green9;
+
+		.info-sale {
+			gap: toRem(12);
+		}
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      .item-sale__image {
+        scale: 1.05;
+      }
+    }
+  }
+  // .item-sale__link
+
+  &__link {
+    display: block;
+    aspect-ratio: 424 / 536;
+  }
+
+  // .item-sale__body
+  &__body {
+    position: relative;
+    z-index: 2;
+    padding: toRem(35);
+    text-align: center;
+  }
+
+  // .item-sale__label
+  &__label {
+    margin-bottom: toRem(16);
+    letter-spacing: toRem(0.42);
+    text-transform: uppercase;
+  }
+
+  // .item-sale__title
+  &__title {
+    margin-bottom: toRem(8);
+    @include typography("h3", 600);
+  }
+
+  // .item-sale__countdown
+  &__countdown {
+    max-width: toRem(290);
+    margin: 0 auto toRem(24);
+  }
+
+  // .item-sale__button
+  &__button {
+  }
+
+  // .item-sale__image
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: bottom;
+    transition: scale 0.5s;
+  }
+
+	&__info {
+		margin-bottom: toRem(30);
+  }
+}
+
+.info-sale {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: toRem(8);
+  // .info-sale__text
+  &__text {
+		@include typography ("L");
+  }
+
+  // .info-sale__value
+  &__value {
+		&--second {
+			@include typography ("XL", 500);
+			color: $warning;
+		}
+
+		&--black-promo {
+			padding: toRem(6) toRem(12);
+			border-radius: toRem(5);
+			background-color: $green9;
+			color: $yellow;
+			@include typography ("L", 600);
+		}
+  }
+}
